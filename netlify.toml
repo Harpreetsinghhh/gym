@@ -1,5 +1,14 @@
+# SPA fallback: serve the app shell for client-side routes.
+# Avoid redirecting Netlify asset requests to index.html.
 [[redirects]]
-from = "/*"
+from = "/:splat"
+to = "/index.html"
+status = 200
+force = true
+
+# Keep root working explicitly.
+[[redirects]]
+from = "/"
 to = "/index.html"
 status = 200
 force = true
